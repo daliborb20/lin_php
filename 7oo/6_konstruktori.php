@@ -4,7 +4,7 @@ class podmornica {
   function izroni(){
      echo "Izranja podmornica";
   }
-  function __construct(){
+  function __construct(){//izvrsi navedeni kod svaki put kada ga pozovemo
     echo $this ->prozori = 11111111111111;
     
   }
@@ -23,7 +23,6 @@ class Prosiri extends DataAccess{
       echo $this ->prozori;//undefined greska
    }
 }
-
 $podatak = new DataAccess();
 
 echo $podatak ->tockovi;

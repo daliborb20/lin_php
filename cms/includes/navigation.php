@@ -1,3 +1,4 @@
+<?php include "db.php"; ?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -14,6 +15,16 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+<?php
+$query = 'SELECT * FROM kategorije';
+$rezultat = mysqli_query($connection, $query);
+foreach($rezultat as $rez){
+  echo "<li><a>{$rez['kat_naziv']}</a></li>";
+}
+
+
+?>
+<!--
                     <li>
                         <a href="#">About</a>
                     </li>
@@ -23,6 +34,7 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

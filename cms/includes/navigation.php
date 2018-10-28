@@ -19,7 +19,8 @@
 $query = 'SELECT * FROM kategorije';
 $rezultat = mysqli_query($connection, $query);
 foreach($rezultat as $rez){
-  echo "<li><a>{$rez['kat_naziv']}</a></li>";
+  $pretraga = $rez['kat_naziv'];
+  echo "<li><a>{$pretraga}</a></li>";
 }
 
 

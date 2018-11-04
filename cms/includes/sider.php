@@ -22,22 +22,22 @@ Posalji
                 <div class="well">
                     <h4>Blog Categories</h4>
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <ul class="list-unstyled">
 <?php
-$query = "select post_tag from postovi";
+$query = "select * from kategorije limit 6";
 $rezultat = mysqli_query($connection, $query);
 if(!$rezultat){
    echo "Nije moguce izvrsiti citanje";
 } else {
   while($red = mysqli_fetch_assoc($rezultat)){
-    echo "<li><a href='#'>{$red['post_tag']}</a></li>";
+    echo "<li><a href='#'>{$red['kat_naziv']}</a></li>";
    }
 }
 ?>
                            </ul>
                         </div>
-                     </div>
+                       </div>
                     <!-- /.row -->
                 </div>
 

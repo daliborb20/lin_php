@@ -4,14 +4,17 @@
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Blog Search</h4>
+                <form action="" method="POST">
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        <input type="text" name="pretraga" class="form-control">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button name="posalji" class="btn btn-default" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
+Posalji
                         </button>
                         </span>
                     </div>
+                </form>
                     <!-- /.input-group -->
                 </div>
 
@@ -21,40 +24,26 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
+<?php
+$query = "select post_tag from postovi";
+$rezultat = mysqli_query($connection, $query);
+if(!$rezultat){
+   echo "Nije moguce izvrsiti citanje";
+} else {
+  while($red = mysqli_fetch_assoc($rezultat)){
+    echo "<li><a href='#'>{$red['post_tag']}</a></li>";
+   }
+}
+?>
+                           </ul>
                         </div>
-                        <!-- /.col-lg-6 -->
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.col-lg-6 -->
-                    </div>
+                     </div>
                     <!-- /.row -->
                 </div>
 
                 <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                </div>
+<?php include "widzet.php"; ?>
+</div>
 
-            </div>
 
 

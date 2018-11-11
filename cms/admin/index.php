@@ -1,4 +1,4 @@
-<?php include "./includes/header.php" ?>
+<?php include "./includes/admin_header.php" ?>
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -13,15 +13,7 @@
                             Dobro dosli na administratorski portal
                             <small>Subheading</small>
                         </h1>
-<div class="col-xs-6">
-<form action="">
-<div class="form-group">
-<input  type="text" name="kat_naslov">
-
-</div>
-</form>
-</div>
-                    </div>
+                   </div>
                 </div>
                 <!-- /.row -->
 
@@ -30,4 +22,4 @@
 
         </div>
         <!-- /#page-wrapper -->
-<?php include "./includes/footer.php"; ?>
+<?php include "./includes/admin_footer.php"; ?>

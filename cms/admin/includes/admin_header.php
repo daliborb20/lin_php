@@ -1,6 +1,6 @@
-<?php
-include_once "../includes/db.php"
-?><!DOCTYPE html>
+<?php ob_start(); ?>
+<?php include "../includes/db.php" ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

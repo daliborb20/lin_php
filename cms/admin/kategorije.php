@@ -1,7 +1,8 @@
-<?php include "./includes/admin_header.php" ?>
+<?php include "./includes/admin_header.php"; ?>
 
     <div id="wrapper">
 <?php
+//========================================obrisi query=====================================
 if(isset($_GET['delete'])){
    $kat_rbr = mysqli_real_escape_string($connection,$_GET['delete']);
    $query_brisanje = "DELETE FROM kategorije WHERE kat_rbr ='$kat_rbr'";
@@ -31,7 +32,7 @@ if(isset($_GET['delete'])){
 <div class="col-xs-6">
     <form action="" method="POST">
       <div class="form-group">
-      <label for="kat_naslov">Naslov Kategorije</label>
+      <label for="kat_naslov">Unesi  Kategoriju</label>
       <input  class="form-control"type="text" name="kat_naziv">
       </div>
 
@@ -41,19 +42,14 @@ if(isset($_GET['delete'])){
 
     </form>
 <?php
-if(isset($_POST['submit'])){
-  $kat_naziv= mysqli_real_escape_string($connection, $_POST['kat_naziv']);
-  if($kat_naziv =="" OR empty($kat_naziv)){
-     echo "<h4 class='alert alert-warning'>Neophodno je uneti vrednost</h4>";
-  }else {
-  $kat_query = "INSERT INTO kategorije (kat_naziv) VALUES ('$kat_naziv')";
-  $rezultat = mysqli_query($connection, $kat_query);
-  if(!$rezultat){
-     die("<h4 class='alert alert-danger'>Greska prilikom upisa u bazu". mysqli_error($connection) . "</h4>");
-  } else {
-     echo "<h4 class='alert alert-success'>Uspesno upisano u bazu</h4>";
-  }
-}}
+//===========================================update kategorije=============================================
+if(isset($_GET['izmeni'])) {
+   $kat_rbr = $_GET['izmeni'];
+   include "includes/update_kategorije.php";
+}
+?>
+<?php
+unesi_kategorije();
 ?>
 </div>
 <div class="col-xs-6">
@@ -79,6 +75,7 @@ echo "<tr>";
 echo "<td>{$rbr}</td>";
 echo "<td>{$naziv}</td>";
 echo "<td><a href='kategorije.php?delete={$rbr}'>Izbrisi</a></td>";
+echo "<td><a href='kategorije.php?izmeni={$rbr}'>Izmeni</a></td>";
 }
   ?>
   </tr>

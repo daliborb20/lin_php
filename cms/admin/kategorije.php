@@ -53,10 +53,6 @@ unesi_kategorije();
 ?>
 </div>
 <div class="col-xs-6">
-<?php
-$query = "SELECT * FROM kategorije";
-$rezultat = mysqli_query($connection, $query);
-?>
 
 
 
@@ -68,16 +64,8 @@ $rezultat = mysqli_query($connection, $query);
     </tr>
 <tbody>
 <?php
-foreach($rezultat as $r){
-  $rbr = $r['kat_rbr'];
-  $naziv = $r['kat_naziv'];
-echo "<tr>";
-echo "<td>{$rbr}</td>";
-echo "<td>{$naziv}</td>";
-echo "<td><a href='kategorije.php?delete={$rbr}'>Izbrisi</a></td>";
-echo "<td><a href='kategorije.php?izmeni={$rbr}'>Izmeni</a></td>";
-}
-  ?>
+pronadjiSveKategorije();
+?>
   </tr>
 </tbody>
   </thead>

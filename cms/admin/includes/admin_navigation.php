@@ -43,7 +43,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="#">Prikazi postove</a>
+                                <a href="postovi.php">Prikazi postove</a>
                             </li>
                             <li>
                                 <a href="#">Dodaj post</a>
@@ -52,7 +52,7 @@
                     </li>
 
                     <li>
-                      <a href="bootstrap-elements.html"></i> Kategorije</a>
+                      <a href="kategorije.php"></i> Kategorije</a>
                     </li>
                      <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Komentari</a>

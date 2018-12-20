@@ -2,7 +2,6 @@
 <?php include "./includes/navigation.php"; ?>
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
 
             <!-- Blog Entries Column -->
@@ -15,9 +14,8 @@ while($red = mysqli_fetch_assoc($rezultat)){
    $autor = $red['post_autor'];
    $sadrzaj = $red['post_sadrzaj'];
    $slika = $red['post_slika'];
-
+   fn
 ?>
-                <h1 class="page-header">
                     Page Heading
                     <small>Secondary Text</small>
                 </h1>

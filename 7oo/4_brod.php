@@ -4,7 +4,6 @@ class Brod{
    var $propeleri = 4;
    function spustiSidro(){
       echo "Sidro je spusteno";
-
    }
    function podigniSidro(){
       echo "Sidro je podignuto";

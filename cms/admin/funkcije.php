@@ -34,6 +34,24 @@ function pronadjiSveKategorije(){
 
 }}
 
+function izbrisiKategorije()
+{
+    global $connection;
+    if(isset($_GET['delete'])){
+       $kat_rbr = mysqli_real_escape_string($connection,$_GET['delete']);
+       $query_brisanje = "DELETE FROM kategorije WHERE kat_rbr ='$kat_rbr'";
+       $rezultat_brisanje = mysqli_query($connection, $query_brisanje);
+       header("Location: kategorije.php");
+       if(!$rezultat_brisanje){
+         die("<h4 class='alert alert-danger'>Greska prilikom brisanja". mysqli_error($connection) . "</h4>");
+       } else {
+          echo ("<h4 class='alert alert-success'>Uspesno obrisano!</h4>");
+       }
+}
+    
+}
+
+
 
 
 
@@ -43,3 +61,4 @@ function pronadjiSveKategorije(){
 
 
 ?>
+
